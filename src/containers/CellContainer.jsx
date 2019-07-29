@@ -1,22 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { changeColor } from '../actions';
 
-const CellContainer = ({index, width}) => {
-    const [color, setColor] = useState('red');
-
+const CellContainer = ({index, color, width, dispatchColor}) => {
     let cellStyle = {
         width: width + '%',
         paddingBottom: width + '%',
         backgroundColor: color,
     }
 
-    const changeColor = () => {
-        const randomColor = '#' + (Math.random().toString(16) + "000000").substring(2,8);
-        setColor(randomColor);
-    }
-
     return(
-        <div style={cellStyle} onClick={changeColor}/> 
+        <div style={cellStyle} onClick={() => dispatchColor(index)}/> 
     );
-}
+};
 
-export default CellContainer;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        color: state.colors[ownProps.index]
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatchColor: (index) => dispatch(changeColor(index))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CellContainer);
