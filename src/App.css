@@ -23,11 +23,17 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-container {
+  display: flex;
+  flex-flow: row;
+  flex-grow: 1;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.grid-container.cell {
+  cursor: cell;
+}
+
+.grid-container div {
+  border: 1px solid;
 }
