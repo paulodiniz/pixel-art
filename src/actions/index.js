@@ -1,8 +1,9 @@
-export const changeColor = (index) => {
+export const changeColor = (index, selectedColor) => {
     return {
         type: 'CHANGE_COLOR',
         payload: {
             index: index,
+            selectedColor: selectedColor,
         }
     }
 }

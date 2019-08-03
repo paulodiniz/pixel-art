@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import ColorMapReducer from './ColorMapReducer';
-import OtherReducer from './OtherReducer';
+import GridReducer from './GridReducer';
+import SelectedColorReducer from './SelectedColorReducer';
 
 export default combineReducers({
-    colors: ColorMapReducer,
+    grid: GridReducer,
+    selectedColor: SelectedColorReducer,
 });

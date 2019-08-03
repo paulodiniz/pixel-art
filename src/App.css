@@ -29,6 +29,7 @@
   flex-grow: 1;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 70%;
 }
 .grid-container.cell {
   cursor: cell;

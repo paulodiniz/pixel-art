@@ -1,23 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CellContainer from './CellContainer';
+import GridComponent from '../components/GridComponent';
 
-const NUM_LINES = 20;
-const NUM_COLS  = 20;
-
-const width = 100 / NUM_COLS;
-
-const GridContainer = ({colors}) => {
+const GridContainer = ({colors, numLines, numCols}) => {
+    const width = 100/numCols;
     return(
-        <div className="grid-container cell">
-            {colors.map((color, index) => <CellContainer index={index} width={width} key={index} />)}
-        </div>
+        <GridComponent numLines={numLines} numCols={numCols} colors={colors} width={width}/>
     );
 };
 
 const mapStateToProps = (state) => {
     return {
-        colors: state.colors
+        colors: state.grid.colors,
+        numLines: state.grid.numLines,
+        numCols: state.grid.numCols,
     }
 }
 
