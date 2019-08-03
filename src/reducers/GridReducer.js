@@ -1,6 +1,6 @@
 const NUM_LINES = 5;
 const NUM_COLS  = 5;
-const INITIAL_COLOR = 'RED'
+const INITIAL_COLOR = 'RED';
 
 let colors = [];
 for(var i = 0; i < NUM_LINES * NUM_COLS; i++) {
