@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
     switch(action.type) {
         case 'CHANGE_COLOR':
             const { index, selectedColor } = action.payload;
-            const colors = state.colors
+            const colors = state.colors;
 
             const start = colors.slice(0, index);
             const end   = colors.slice(index + 1, colors.length);

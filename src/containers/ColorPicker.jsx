@@ -1,9 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import ColorContainer from './ColorContainer';
 
-const ColorPicker = () => {
-    return(
-        <div>Hello</div>
-    )
+const mapStateToProps = (state) => {
+    return {
+        colorsToPick: state.colorsToPick
+    }
 };
 
-export default ColorPicker;
+const ColorPicker = ({colorsToPick}) => (
+    colorsToPick.map(color => <ColorContainer color={color} key={color} />)
+)
+
+export default connect(mapStateToProps)(ColorPicker);
