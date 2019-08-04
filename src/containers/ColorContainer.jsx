@@ -7,7 +7,10 @@ const ColorContainer = ({color, dispatchChangeSelectedColor}) => {
         backgroundColor: color,
     }
     return (
-        <div style={style} className="color-picker-cell" onClick={() => dispatchChangeSelectedColor(color)}/>
+        <div style={style} 
+            className="color-picker-cell"
+            onClick={() => dispatchChangeSelectedColor(color)}
+        />
     )
 }
 
